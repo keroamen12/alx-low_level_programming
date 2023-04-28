@@ -5,23 +5,23 @@
  * @s : s is a character
  * Return: value is i
  */
+int _strlen(const char *s)
+{
+	int r = 0;
+
+	while (s[r] != '\0')
+	{
+		r++;
+	}
+	return (r);
+}
+
 /**
- * add_node - add a new node at beginning of a list_t list.
- * @head: head of a list_t list.
+ * add_node - add a new node at beginning.
+ * @head: head oflist.
  * @str: value to insert into element.
  * Return: the number of nodes.
  */
-int _strlen(const char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new;
@@ -33,7 +33,7 @@ list_t *add_node(list_t **head, const char *str)
 
 	new->len = _strlen(str);
 	new->next = *head;
-	*head = new;
+	*head = add;
 
 	return (new);
 }
